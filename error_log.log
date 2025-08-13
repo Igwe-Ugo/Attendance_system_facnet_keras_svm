@@ -1,9 +1,0 @@
-2025-08-13 20:55:36,993 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet_facenet_keras/assets
-2025-08-13 20:55:36,993 - INFO - Starting up UDS server on /tmp/DsXiEPcVTU
-2025-08-13 20:55:36,994 - INFO - Connected to Flet app and handling user sessions...
-2025-08-13 20:55:38,571 - INFO - Session started: 
-2025-08-13 20:56:08,544 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
-2025-08-13 20:56:44,690 - WARNING - Not enough users for training
-2025-08-13 20:56:44,693 - WARNING - Classifier training completed with warnings
-2025-08-13 20:57:13,747 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
-2025-08-13 20:57:38,093 - ERROR - Recognition failed: 'SVC' object has no attribute 'classes_'
