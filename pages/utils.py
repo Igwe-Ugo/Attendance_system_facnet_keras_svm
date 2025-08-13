@@ -179,7 +179,7 @@ class FaceClassifier:
             x, y = np.array(data['embeddings']), np.array(data['labels'])
             unique_users = np.unique(y)
 
-            if len(unique_users) >= 1:
+            if len(unique_users) >= 2:
                 self.svm.fit(x, y)
                 with open(self.classifier_file, 'wb') as f:
                     pickle.dump(self.svm, f)
@@ -202,9 +202,20 @@ class FaceClassifier:
             emb = self.get_embedding(face)
             if emb is None:
                 return "Unknown", 0.0
+            
+            if len(self.svm.classes_) >= 2:
+                if os.path.exists(self.classifier_file):
+                    with open(self.classifier_file, 'rb') as f:
+                        model = pickle.load(f)
 
-            # If we have mean embeddings (for cosine similarity approach)
-            if self.mean_embeddings:
+                    if isinstance(model, SVC):
+                        probs = model.predict_proba([emb])[0]
+                        max_idx = np.argmax(probs)
+                        return model.classes_[max_idx], probs[max_idx]
+
+                return "Unknown", 0.0
+            
+            elif self.mean_embeddings:
                 best_match = None
                 highest_similarity = 0.0
                 
@@ -220,7 +231,7 @@ class FaceClassifier:
                 else:
                     return "Unknown", 0.0
 
-            # Fallback to SVM if no mean embeddings available
+            """ # Fallback to SVM if no mean embeddings available
             if os.path.exists(self.classifier_file):
                 with open(self.classifier_file, 'rb') as f:
                     model = pickle.load(f)
@@ -230,7 +241,7 @@ class FaceClassifier:
                     max_idx = np.argmax(probs)
                     return model.classes_[max_idx], probs[max_idx]
 
-            return "Unknown", 0.0
+            return "Unknown", 0.0 """
         except Exception as e:
             logger.error(f"Recognition failed: {e}")
             return "Unknown", 0.0

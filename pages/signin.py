@@ -192,6 +192,8 @@ class SignInPage(ft.UserControl):
 
             # Recognize face
             recognized_email, confidence = self.face_classifier.recognize_face(cropped_face)
+            print(f"Recognized Email: {recognized_email}")
+            print(f"Confidence: {confidence}")
             
             if confidence < self.face_classifier.similarity_threshold:
                 self._set_processing_state(False)
