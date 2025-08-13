@@ -1,0 +1,43 @@
+2025-08-09 20:55:23,192 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet-master/assets
+2025-08-09 20:55:23,192 - INFO - Starting up UDS server on /tmp/LRkybiUrMU
+2025-08-09 20:55:23,193 - INFO - Connected to Flet app and handling user sessions...
+2025-08-09 20:55:23,659 - INFO - Session started: 
+2025-08-09 20:55:53,841 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 20:56:30,603 - ERROR - Registration failed: local variable 'aug_path' referenced before assignment
+2025-08-09 20:56:30,604 - ERROR - Face processing failed: Face registration failed
+2025-08-09 20:56:36,456 - ERROR - Registration failed: local variable 'aug_path' referenced before assignment
+2025-08-09 20:56:36,457 - ERROR - Face processing failed: Face registration failed
+2025-08-09 20:56:40,198 - ERROR - Registration failed: local variable 'aug_path' referenced before assignment
+2025-08-09 20:56:40,198 - ERROR - Face processing failed: Face registration failed
+2025-08-09 21:03:11,798 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet-master/assets
+2025-08-09 21:03:11,798 - INFO - Starting up UDS server on /tmp/Utmeycruzw
+2025-08-09 21:03:11,799 - INFO - Connected to Flet app and handling user sessions...
+2025-08-09 21:03:12,335 - INFO - Session started: 
+2025-08-09 21:03:37,190 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 21:04:21,112 - INFO - Trained OneClassSVM for single-user mode
+2025-08-09 21:04:40,114 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 21:04:40,758 - INFO - Loaded OneClassSVM
+2025-08-09 21:12:58,644 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet-master/assets
+2025-08-09 21:12:58,644 - INFO - Starting up UDS server on /tmp/MjLwrJtBxa
+2025-08-09 21:12:58,645 - INFO - Connected to Flet app and handling user sessions...
+2025-08-09 21:12:59,099 - INFO - Session started: 
+2025-08-09 21:13:26,877 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 21:14:01,624 - INFO - Trained OneClassSVM for single-user mode
+2025-08-09 21:14:17,650 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 21:14:18,059 - INFO - Loaded OneClassSVM
+2025-08-09 22:05:15,081 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet_facenet_keras/assets
+2025-08-09 22:05:15,082 - INFO - Starting up UDS server on /tmp/OYeQOVIfWk
+2025-08-09 22:05:15,083 - INFO - Connected to Flet app and handling user sessions...
+2025-08-09 22:05:15,600 - INFO - Session started: 
+2025-08-09 22:05:56,931 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 22:06:37,619 - INFO - Trained OneClassSVM for single-user mode
+2025-08-09 22:07:03,359 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 22:07:03,841 - INFO - Loaded OneClassSVM
+2025-08-09 22:18:38,198 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet_facenet_keras/assets
+2025-08-09 22:18:38,199 - INFO - Starting up UDS server on /tmp/oqlhcOmBIR
+2025-08-09 22:18:38,199 - INFO - Connected to Flet app and handling user sessions...
+2025-08-09 22:18:38,658 - INFO - Session started: 
+2025-08-09 22:19:17,163 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 22:19:51,290 - INFO - Trained OneClassSVM for single-user mode
+2025-08-09 22:20:19,589 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-09 22:20:20,029 - INFO - Loaded OneClassSVM
