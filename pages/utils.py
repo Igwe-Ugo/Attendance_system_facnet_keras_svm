@@ -9,6 +9,7 @@ from datetime import datetime as dt
 from keras.models import load_model
 from cryptography.fernet import Fernet
 from typing import Optional, Tuple, Dict
+from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Logging configuration
@@ -34,6 +35,7 @@ class FaceClassifier:
         self.facenet_model = load_model(self.facenet_path)
         self.face_detector = MTCNN()
         self.svm = SVC(kernel='linear', probability=True)
+        self.encoder = LabelEncoder()
 
         self._ensure_dirs()
         self._load_classifier()
@@ -161,6 +163,7 @@ class FaceClassifier:
 
             x.extend(embeddings)
             y.extend([email] * len(embeddings))
+            print(y)
             np.savez_compressed(self.embedding_file, embeddings=x, labels=y)
 
             return True
@@ -177,6 +180,8 @@ class FaceClassifier:
 
             data = np.load(self.embedding_file, allow_pickle=True)
             x, y = np.array(data['embeddings']), np.array(data['labels'])
+            self.encoder.fit(y)
+            y = self.encoder.transform(y)
             unique_users = np.unique(y)
 
             if len(unique_users) >= 2:
@@ -209,11 +214,13 @@ class FaceClassifier:
                         model = pickle.load(f)
 
                     if isinstance(model, SVC):
+                        face_name = model.predict([emb])[0]
                         probs = model.predict_proba([emb])[0]
+                        actual_name = self.encoder.inverse_transform(face_name)
                         max_idx = np.argmax(probs)
-                        return model.classes_[max_idx], probs[max_idx]
+                        return actual_name, probs[max_idx]
 
-                return "Unknown", 0.0
+                return "Unknown, path not found!", 0.0
             
             elif self.mean_embeddings:
                 best_match = None
@@ -231,17 +238,6 @@ class FaceClassifier:
                 else:
                     return "Unknown", 0.0
 
-            """ # Fallback to SVM if no mean embeddings available
-            if os.path.exists(self.classifier_file):
-                with open(self.classifier_file, 'rb') as f:
-                    model = pickle.load(f)
-
-                if isinstance(model, SVC):
-                    probs = model.predict_proba([emb])[0]
-                    max_idx = np.argmax(probs)
-                    return model.classes_[max_idx], probs[max_idx]
-
-            return "Unknown", 0.0 """
         except Exception as e:
             logger.error(f"Recognition failed: {e}")
             return "Unknown", 0.0
