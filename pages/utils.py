@@ -68,13 +68,19 @@ class FaceClassifier:
         for user_email in os.listdir(user_storage_dir):
             user_dir = os.path.join(user_storage_dir, user_email)
             if os.path.isdir(user_dir):
-                embedding_path = os.path.join(user_dir, 'mean_embeddings.npy')
+                # Changed from 'mean_embeddings.npy' to 'mean_embedding.npy'
+                embedding_path = os.path.join(user_dir, 'mean_embedding.npy')
                 if os.path.exists(embedding_path):
                     try:
                         mean_embeddings[user_email] = np.load(embedding_path)
                         logger.info(f"Loaded embeddings for user: {user_email}")
+                        # Add debug print for the loaded embedding
+                        logger.debug(f"Embedding shape: {mean_embeddings[user_email].shape}, "
+                                f"norm: {np.linalg.norm(mean_embeddings[user_email])}")
                     except Exception as e:
                         logger.error(f"Failed to load embeddings for {user_email}: {str(e)}")
+                else:
+                    logger.warning(f"No embedding file found at {embedding_path}")
         
         return mean_embeddings
 
@@ -149,10 +155,16 @@ class FaceClassifier:
             if not embeddings:
                 raise ValueError("No valid faces detected")
 
-            # 4. Save embeddings
+            # 4. Save embeddings (ensure filename matches)
             mean_embedding = np.mean(embeddings, axis=0)
-            mean_emb_path = os.path.join(self.user_dir, email, 'mean_embedding.npy')
+            mean_emb_path = os.path.join(self.user_dir, email, 'mean_embedding.npy')  # Singular
+            os.makedirs(os.path.dirname(mean_emb_path), exist_ok=True)
             np.save(mean_emb_path, mean_embedding)
+            
+            # Debug print
+            logger.info(f"Saved mean embedding to {mean_emb_path}")
+            logger.debug(f"Embedding shape: {mean_embedding.shape}, "
+                        f"norm: {np.linalg.norm(mean_embedding)}")
             
             # Update global embeddings file
             if os.path.exists(self.embedding_file):
@@ -208,21 +220,8 @@ class FaceClassifier:
             if emb is None:
                 return "Unknown", 0.0
             
-            if len(self.svm.classes_) >= 2:
-                if os.path.exists(self.classifier_file):
-                    with open(self.classifier_file, 'rb') as f:
-                        model = pickle.load(f)
-
-                    if isinstance(model, SVC):
-                        face_name = model.predict([emb])[0]
-                        probs = model.predict_proba([emb])[0]
-                        actual_name = self.encoder.inverse_transform(face_name)
-                        max_idx = np.argmax(probs)
-                        return actual_name, probs[max_idx]
-
-                return "Unknown, path not found!", 0.0
-            
-            elif self.mean_embeddings:
+            # First try cosine similarity with mean embeddings
+            if self.mean_embeddings:
                 best_match = None
                 highest_similarity = 0.0
                 
@@ -235,8 +234,20 @@ class FaceClassifier:
                 
                 if highest_similarity >= self.similarity_threshold:
                     return best_match, highest_similarity
-                else:
-                    return "Unknown", 0.0
+
+            # Fall back to SVM if available and trained
+            if os.path.exists(self.classifier_file):
+                with open(self.classifier_file, 'rb') as f:
+                    model = pickle.load(f)
+
+                if isinstance(model, SVC) and hasattr(model, 'classes_') and len(model.classes_) >= 2:
+                    face_name = model.predict([emb])[0]
+                    probs = model.predict_proba([emb])[0]
+                    actual_name = self.encoder.inverse_transform([face_name])[0]
+                    max_idx = np.argmax(probs)
+                    return actual_name, probs[max_idx]
+
+            return "Unknown", 0.0
 
         except Exception as e:
             logger.error(f"Recognition failed: {e}")

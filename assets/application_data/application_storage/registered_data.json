@@ -1,0 +1,21 @@
+[
+    {
+        "fullname": "gAAAAABonj2URq59SbOI2aoj1PqR8Z4uCY1moLW82rylK4QCZJbb-e2IhqW-UTF98LJwS_BHo_HXdVZuALkeZLZ8DOcm3jUSQbP4AQDshj8gkjHj59pSgFc=",
+        "email": "gAAAAABonj2UcKuI7hpqxPSDOuByldY6jCzKp5Aeja4phvgQDHrzJaI6VPVNj4vDbgYFF_GRmOrcL8UuN_4uu5DLVqs8ncrdv5criUGZxprHnbPN6pUMNYg=",
+        "telephone": "gAAAAABonj2UzMLwRXwHyjzPedG0g7TYf1vW49EsvnkANrzfmNKQn-eFOUv6OjD165tHZzhj1PD5qPLJtjduWe9UGuKE13NrjA==",
+        "user_role": "Administrator",
+        "face_image": "assets/application_data/user_storage/ugo2000igwe12@gmail.com/ugo2000igwe12@gmail.com.jpg",
+        "total_attendance": 2,
+        "attendance_status": [
+            {
+                "sign_in_time": "14-08-2025 20:48:36",
+                "sign_out_time": "14-08-2025 20:48:43"
+            },
+            {
+                "sign_in_time": "14-08-2025 21:26:15",
+                "sign_out_time": "14-08-2025 21:26:22"
+            }
+        ],
+        "last_attendance_time": "14-08-2025 21:26:22"
+    }
+]
