@@ -9,7 +9,7 @@ A secure, scalable attendance system using **real-time facial recognition**, des
 ## **✨ Key Features**  
 1. **Dual-Mode Recognition**  
    - **Multi-user mode:** SVM classifier for ≥2 registered users.  
-   - **Single-user mode:** OneClassSVM for outlier detection (ideal for admin-only setups).  
+   - **Single-user mode:** cosine_similarity for outlier detection (ideal for admin-only setups).  
 
 2. **Enhanced Security**  
    - Encrypted user data (AES-256 via `cryptography`).  
@@ -34,7 +34,7 @@ A secure, scalable attendance system using **real-time facial recognition**, des
 |---------------------|------------------|  
 | **Frontend**        | Flet (Python)    |  
 | **Face Detection**  | MTCNN            |  
-| **Face Recognition**| TensorFlow + SVM/OneClassSVM |  
+| **Face Recognition**| TensorFlow + SVM/cosine_similarity |  
 | **Data Encryption** | Fernet (AES-256) |  
 | **Storage**         | JSON + CSV       |  
 
@@ -51,7 +51,7 @@ python register_face.py  # Captures face + encrypts user data
 ```bash
 python signin.py  # Real-time sign-in/sign-out  
 ```  
-- **Thresholds**: Adjust `similarity_threshold` in `signin.py` (default: `0.5`).  
+- **Thresholds**: Adjust `similarity_threshold` in `signin.py` (default: `0.6`).  
 
 ### **3. Admin Controls**  
 - Export logs:  
@@ -63,7 +63,7 @@ python signin.py  # Real-time sign-in/sign-out
 ---
 
 ## **🔧 Technical Improvements**  
-- **Dual SVM Support**: Seamless fallback between `SVC` (multi-user) and `OneClassSVM` (single-user).  
+- **SVM Support and cosine_similarity**: Seamless fallback between `SVC` (multi-user) and `cosine_similarity` (single-user).  
 - **Normalized Scores**: Decision scores scaled to `[0, 1]` for unified thresholds.  
 - **Thread Safety**: Camera resources released on app exit.  
 
@@ -79,7 +79,7 @@ python signin.py  # Real-time sign-in/sign-out
 
 ## **🤝 Contributors**  
 **Igwe Ugochukwu Edwin**  
-- GitHub: [@yourhandle](https://github.com/yourhandle)  
+- GitHub: [@yourhandle](https://github.com/Igwe-Ugo)  
 - Email: your.email@example.com  
 
 **Open to collaborations!** Fork → Improve → PR.  
@@ -91,5 +91,3 @@ python signin.py  # Real-time sign-in/sign-out
 - Tested on Python 3.7.6 (Ubuntu/Windows).  
 
 ---
-
-This version highlights technical depth while maintaining clarity. Let me know if you'd like to emphasize any other aspects!
