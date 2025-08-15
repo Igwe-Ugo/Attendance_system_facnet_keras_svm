@@ -71,7 +71,7 @@ python signin.py  # Real-time sign-in/sign-out
 
 ## **📊 Example Output**  
 ```plaintext
-[SYSTEM] Recognized: Known (0.82)
+[SYSTEM] Recognized: {users_name} (0.82)
 [ATTENDANCE] User: admin@org.com, Action: sign_in, Time: 2024-03-15 09:00:00  
 ```  
 
@@ -80,7 +80,7 @@ python signin.py  # Real-time sign-in/sign-out
 ## **🤝 Contributors**  
 **Igwe Ugochukwu Edwin**  
 - GitHub: [@yourhandle](https://github.com/Igwe-Ugo)  
-- Email: your.email@example.com  
+- Email: ugochukwu2000igwe@gmail.com 
 
 **Open to collaborations!** Fork → Improve → PR.  
 
