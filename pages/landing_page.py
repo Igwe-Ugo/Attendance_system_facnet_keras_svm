@@ -4,9 +4,6 @@ class LandingPage(ft.UserControl):
     def sign_in(self, e):
         self.page.go('/signin')
 
-    def sign_up(self, e):
-        self.page.go('/signup')
-
     def __init__(self, page):
         super().__init__()
         self.page = page
@@ -30,23 +27,6 @@ class LandingPage(ft.UserControl):
             ),
             padding=ft.padding.only(left=25, right=25, top=20, bottom=20),
             on_click=self.sign_in,
-        )
-
-        self.buttonSignUp = ft.Container(
-            border_radius=5,
-            expand=True,
-            bgcolor='#4f46e5',
-            gradient=ft.LinearGradient(
-                colors=['#ea580c', '#4f46e5'],
-            ),
-            content=ft.Text(
-                'Sign Up',
-                color='White',
-                size=20,
-                text_align=ft.TextAlign.CENTER
-            ),
-            padding=ft.padding.only(left=25, right=25, top=20, bottom=20),
-            on_click=self.sign_up,
         )
 
     def build(self):
@@ -99,7 +79,6 @@ class LandingPage(ft.UserControl):
                         ),
                         ft.Row(
                             controls=[
-                                self.buttonSignUp,
                                 self.buttonSignIn
                             ],
                             alignment='center',
