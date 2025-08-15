@@ -24,3 +24,12 @@
 2025-08-15 20:32:18,203 - INFO - Session started: 
 2025-08-15 20:32:29,288 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
 2025-08-15 20:32:29,717 - INFO - Loaded embeddings for user: ugo2000igwe12@gmail.com
+2025-08-15 21:08:33,598 - INFO - Assets path configured: /home/edwin/Documents/attendance_system_flet_facenet_keras/assets
+2025-08-15 21:08:33,603 - INFO - Starting up UDS server on /tmp/nzEoufcNvJ
+2025-08-15 21:08:33,605 - INFO - Connected to Flet app and handling user sessions...
+2025-08-15 21:08:35,071 - INFO - Session started: 
+2025-08-15 21:08:44,628 - WARNING - No training configuration found in the save file, so the model was *not* compiled. Compile it manually.
+2025-08-15 21:08:45,071 - INFO - Loaded multi-class SVM
+2025-08-15 21:08:45,072 - INFO - Loaded embeddings for user: aruegbepaul@gmail.com
+2025-08-15 21:08:45,073 - INFO - Loaded embeddings for user: ugo2000igwe12@gmail.com
+2025-08-15 21:08:45,075 - INFO - Loaded embeddings for user: prettyrose4christ@gmail.com

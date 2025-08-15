@@ -5,7 +5,7 @@
         "telephone": "gAAAAABonj2UzMLwRXwHyjzPedG0g7TYf1vW49EsvnkANrzfmNKQn-eFOUv6OjD165tHZzhj1PD5qPLJtjduWe9UGuKE13NrjA==",
         "user_role": "Administrator",
         "face_image": "assets/application_data/user_storage/ugo2000igwe12@gmail.com/ugo2000igwe12@gmail.com.jpg",
-        "total_attendance": 2,
+        "total_attendance": 3,
         "attendance_status": [
             {
                 "sign_in_time": "14-08-2025 20:48:36",
@@ -14,8 +14,50 @@
             {
                 "sign_in_time": "14-08-2025 21:26:15",
                 "sign_out_time": "14-08-2025 21:26:22"
+            },
+            {
+                "sign_in_time": "15-08-2025 21:09:09",
+                "sign_out_time": "15-08-2025 21:09:31"
             }
         ],
-        "last_attendance_time": "14-08-2025 21:26:22"
+        "last_attendance_time": "15-08-2025 21:09:31"
+    },
+    {
+        "fullname": "gAAAAABon2Q62dJeValMTUy3FVXFIyCP1pCWDS_qzChP-r3ReaRF8qVRbSD6e_Ztng0dU2QyMOuqkz58xTyUiliy5SnL8mQ9WQ==",
+        "email": "gAAAAABon2Q6DPjtzT0G0iy09rClnu8IEzCgsW4TCGZe5EkoN_KlL8Ts4EvS02w52Etl4m2r0E0PBLNUqY8DOjnPN-usZOE291MXiydQ-mU2XttYudk7hPg=",
+        "telephone": "gAAAAABon2Q6UC9lviliv_BzshShtyLc6CUhEUEJxyjWTLJEVpe0XkUc0M6PQRhYygLzS1smg7IzzHJjxAsN5dvufo094CO9ZA==",
+        "user_role": "Administrator",
+        "face_image": "assets/application_data/user_storage/aruegbepaul@gmail.com/aruegbepaul@gmail.com.jpg",
+        "total_attendance": 3,
+        "attendance_status": [
+            {
+                "sign_in_time": "15-08-2025 17:45:49",
+                "sign_out_time": "15-08-2025 17:49:49"
+            },
+            {
+                "sign_in_time": "15-08-2025 17:51:26",
+                "sign_out_time": "15-08-2025 17:51:40"
+            },
+            {
+                "sign_in_time": "15-08-2025 18:11:48",
+                "sign_out_time": "15-08-2025 18:25:14"
+            }
+        ],
+        "last_attendance_time": "15-08-2025 18:25:14"
+    },
+    {
+        "fullname": "gAAAAABon2UQzEDfTpyzlXduOKJM5pizfwfNGq1qBx8oEsLi-FuAcfJJyIuVtVXgiI6DjqErAstgFT1XqTfkbBzA8IT8KQt6HA2fROznkDaXysSrzkfcn2Y=",
+        "email": "gAAAAABon2UQ8R9-Zootjlbvb1Y9UVQ7h9HT_JudN7tkVkgazJjPPalYFCV78aJu_vlOHsQ2LGppQQG_11X2n9cgRUtBaf5Wv2xYvT2Eh2us0TA1TdmuFCU=",
+        "telephone": "gAAAAABon2UQy34e85WCCgANY0O_c7oiGXebdOm57Oz3bbFuoR-2SgONANCbOoWlCbwl7ZBIsgnWdGirvfnGZvi74jkBffjq3w==",
+        "user_role": "Regular User",
+        "face_image": "assets/application_data/user_storage/prettyrose4christ@gmail.com/prettyrose4christ@gmail.com.jpg",
+        "total_attendance": 1,
+        "attendance_status": [
+            {
+                "sign_in_time": "15-08-2025 17:49:20",
+                "sign_out_time": "15-08-2025 17:49:45"
+            }
+        ],
+        "last_attendance_time": "15-08-2025 17:49:45"
     }
 ]
